@@ -258,3 +258,14 @@ def find_first_space(texts):
 # htmlcode = markdown_to_html_node(tester)
 # print(htmlcode.tag, htmlcode.children)
 
+
+def extract_title(markdown):
+    blocks = markdown_to_blocks(markdown)
+    for block in blocks:
+        btype = block_to_block_type(block)
+        if btype == "heading":
+            if block[0:2] == "# ":
+                return block[2:].strip()
+            
+    raise Exception("No title")
+

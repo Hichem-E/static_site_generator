@@ -2,6 +2,7 @@ from textnode import TextNode, TextType
 from htmlnode import HTMLNODE
 from leafnode import LeafNode
 from parentnode import ParentNode
+from generate_page import generate_page
 import shutil
 import os
 
@@ -31,6 +32,8 @@ def main():
                 shutil.copy(old_file_path, new_file_path)
 
     rec_fn("static", "public")
+
+    generate_page("content/index.md", "template.html", "public/index.html")
 
 
     
