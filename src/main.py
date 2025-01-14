@@ -1,12 +1,8 @@
-from textnode import TextNode, TextType
-from htmlnode import HTMLNODE
-from leafnode import LeafNode
-from parentnode import ParentNode
-from generate_page import generate_page
-import shutil
 import os
+import shutil
 
-# print("Hello world")
+from generate_page import generate_page
+
 
 def main():  
     

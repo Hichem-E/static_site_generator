@@ -16,7 +16,6 @@ class TestHtmlNode(unittest.TestCase):
         self.assertEqual(node.children, children)
         self.assertEqual(node.props, props)
 
-
     def test_htmlnode_paramchange(self):
         tag = "h1"
         value = "words"
@@ -36,9 +35,14 @@ class TestHtmlNode(unittest.TestCase):
         self.assertIsNone(node.props)
 
     def test_htmlnode_propstohtml(self):
-        node = HTMLNODE(tag="p", value="a block of text", children=None, props={"href": "https://www.google.com"})
+        node = HTMLNODE(
+            tag="p",
+            value="a block of text",
+            children=None,
+            props={"href": "https://www.google.com"},
+        )
         self.assertEqual(' href="https://www.google.com"', node.props_to_html())
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     unittest.main()

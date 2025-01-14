@@ -15,7 +15,6 @@ class TestTextNode(unittest.TestCase):
         node4 = TextNode("This is a text node", TextType.BOLD, "https://www.boot.dev")
         self.assertEqual(node3, node4)
 
-
     def test_textnode_noteq(self):
         # Different text
         node = TextNode("This is a text node maybe?", TextType.BOLD)
@@ -38,10 +37,13 @@ class TestTextNode(unittest.TestCase):
         self.assertNotEqual(node6, node7)
 
     def test_textnode_create(self):
-        node = TextNode("This is a text node maybe?", TextType.BOLD, "https://www.google.dev")
+        node = TextNode(
+            "This is a text node maybe?", TextType.BOLD, "https://www.google.dev"
+        )
         self.assertEqual(type(node.text_type), type(TextType.ITALIC))
         self.assertEqual(type("H"), type(node.text))
         self.assertEqual(type("H"), type(node.url))
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     unittest.main()
